@@ -5,97 +5,82 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <script src="./index.js"></script>
     <title>Document</title>
 </head>
 
 <body>
     <div class="navbar">
         <nav>
-            <img src="./logo.png"/>
+            <img src="./assets/logo.png" />
             <h3>Fine Dine Restaurent</h3>
         </nav>
         <ul>
-            <li>Menu</li>
-            <li>About</li>
-            <li>Order</li>
-            <li><img src="./basket.png" />Basket</li>
+            <li><a onclick="show_menu()">Menu</a></li>
+            <li><a onclick="show_basket()"><img src="./assets/basket.png" />Basket <span id="total_items"></span></a>
+            </li>
         </ul>
     </div>
 
-    <div className="main-box">
+    <div id="menu_box" className="main-box">
         <div class="head">
             <div>
                 <h4>Exploring Exquisite</h4>
                 <ul>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/exquisite/exq1.jpg" />
+
+                        <div class="info">
+                            <p>Cuisine</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('exq1')">Add</button>
+                                <button onclick="remove_from_basket('exq1')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$50.0</p>
+                        </div>
+
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/exquisite/exq2.jpg" />
+                        <div class="info">
+                            <p>Sandwich Cookie</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('exq2')">Add</button>
+                                <button onclick="remove_from_basket('exq2')">Remove</button>
+                                <!-- change these to id -->
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$47.80</p>
+                        </div>
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/exquisite/exq3.jpg" />
+                        <div class="info">
+                            <p>Mini Cake</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('exq3')">Add</button>
+                                <button onclick="remove_from_basket('exq3')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$39.80</p>
+                        </div>
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h4>Indegenous Indian Snack</h4>
-                <ul>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h4>Lickin' the Sticks</h4>
-                <ul>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/exquisite/exq4.jpg" />
+                        <div class="info">
+                            <p>Michelin Food Scene</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('exq4')">Add</button>
+                                <button onclick="remove_from_basket('exq4')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$49.99</p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -103,24 +88,113 @@
                 <h4>Baker's Table</h4>
                 <ul>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/table/table1.jpg" />
+                        <div class="info">
+                            <p>Baked Cake</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('table1')">Add</button>
+                                <button onclick="remove_from_basket('table1')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$59.75</p>
+                        </div>
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/table/table2.jpg" />
+                        <div class="info">
+                            <p>Cheese Slice</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('table2')">Add</button>
+                                <button onclick="remove_from_basket('table2')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$49.75</p>
+                        </div>
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/table/table3.jpg" />
+                        <div class="info">
+                            <p>Baked Spaghetti</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('table3')">Add</button>
+                                <button onclick="remove_from_basket('table3')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$79.75</p>
+                        </div>
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/table/table4.jpg" />
+                        <div class="info">
+                            <p>Cookies</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('table4')">Add</button>
+                                <button onclick="remove_from_basket('table4')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$12.75</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <h4>Indegenous Indian Snack</h4>
+                <ul>
+                    <li>
+                        <img src="./assets/snack/snack1.jpg" />
+                        <div class="info">
+                            <p>Indian Fried Snacks</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('snack1')">Add</button>
+                                <button onclick="remove_from_basket('snack1')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$65.75</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./assets/snack/snack2.jpg" />
+                        <div class="info">
+                            <p>Soft and Sponge Dhokla</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('snack2')">Add</button>
+                                <button onclick="remove_from_basket('snack2')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$20.75</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./assets/snack/snack3.jpg" />
+                        <div class="info">
+                            <p>Fried Rings</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('snack3')">Add</button>
+                                <button onclick="remove_from_basket('snack3')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$9.75</p>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="./assets/snack/snack4.jpg" />
+                        <div class="info">
+                            <p>Jaggery with Peanuts</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('snack4')">Add</button>
+                                <button onclick="remove_from_basket('snack4')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$35.85</p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -128,49 +202,56 @@
                 <h4>Drinks on Demand</h4>
                 <ul>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/drinks/drink1.jpg" />
+                        <div class="info">
+                            <p>Cocktail</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('drink1')">Add</button>
+                                <button onclick="remove_from_basket('drink1')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$55.69</p>
+                        </div>
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/drinks/drink2.jpg" />
+                        <div class="info">
+                            <p>Non-Alcoholic Drink</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('drink2')">Add</button>
+                                <button onclick="remove_from_basket('drink2')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$45.75</p>
+                        </div>
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/drinks/drink3.jpg" />
+                        <div class="info">
+                            <p>Soft-Drinks</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('drink3')">Add</button>
+                                <button onclick="remove_from_basket('drink3')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$19.75</p>
+                        </div>
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <h4>Quick Picks</h4>
-                <ul>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
-                    </li>
-                    <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/drinks/drink4.jpg" />
+                        <div class="info">
+                            <p>Vodka</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('drink4')">Add</button>
+                                <button onclick="remove_from_basket('drink4')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$79.75</p>
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -178,29 +259,66 @@
                 <h4>Candy Crush</h4>
                 <ul>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/candy/candy1.jpg" />
+                        <div class="info">
+                            <p>Butterscotch Candy</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('candy1')">Add</button>
+                                <button onclick="remove_from_basket('candy1')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$4.75</p>
+                        </div>
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/candy/candy2.jpg" />
+                        <div class="info">
+                            <p>Mixed Colofull Candies</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('candy2')">Add</button>
+                                <button onclick="remove_from_basket('candy2')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$14.65</p>
+                        </div>
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/candy/candy3.jpg" />
+                        <div class="info">
+                            <p>Chocolate Candies</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('candy3')">Add</button>
+                                <button onclick="remove_from_basket('candy3')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$20</p>
+                        </div>
                     </li>
                     <li>
-                        <img
-                            src="https://images.lifestyleasia.com/wp-content/uploads/sites/7/2022/03/15102525/Untitled-design-1-11.jpg" />
-                        <p>name</p>
+                        <img src="./assets/candy/candy4.jpg" />
+                        <div class="info">
+                            <p>Gems Candy</p>
+                            <div class="buttons">
+                                <button onclick="addtobasket('candy4')">Add</button>
+                                <button onclick="remove_from_basket('candy4')">Remove</button>
+                            </div>
+                        </div>
+                        <div class="price">
+                            <p>$11.75</p>
+                        </div>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
+
+    <div class = "footer">
+        <p>&copy; If you have any questions or would like to make a reservation, please feel free to get in touch with us:</p>
+    </div>
+
 </body>
 
 </html>
